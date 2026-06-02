@@ -140,14 +140,41 @@ if ("IntersectionObserver" in window && skillsSection && skillFills.length > 0) 
 }
 
 /* ── Contact form submission ── */
+const EMAILJS_PUBLIC_KEY  = "2OlGQW4Gm5cLfK7Ut";
+const EMAILJS_SERVICE_ID  = "service_hlppc4t";
+const EMAILJS_TEMPLATE_ID = "template_d2wtd7k";
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
+
 const contactForm = document.getElementById("contact-form");
 const formSuccess = document.getElementById("form-success");
+const submitBtn   = contactForm?.querySelector('[type="submit"]');
 
 if (contactForm && formSuccess) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    formSuccess.classList.add("is-visible");
-    contactForm.reset();
+
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending…";
+    submitBtn.disabled = true;
+
+    emailjs
+      .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+      .then(() => {
+        formSuccess.textContent = "Thanks! I'll be in touch within 24 hours.";
+        formSuccess.style.color = "";
+        formSuccess.classList.add("is-visible");
+        contactForm.reset();
+      })
+      .catch(() => {
+        formSuccess.textContent = "Something went wrong — please email me directly.";
+        formSuccess.style.color = "var(--color-danger)";
+        formSuccess.classList.add("is-visible");
+      })
+      .finally(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      });
   });
 }
 
