@@ -89,7 +89,7 @@ const projects = [
       { value: "< 5 min", label: "From problem to plan" },
     ],
     demoUrl: "https://kobby-im.github.io/Business-Requirements-Process-Mapping-Tool/",
-    codeUrl: "https://github.com/KOBBY-IM/Business-Requirements-Process-Mapping-Tool/tree/master/requirements-tool",
+    codeUrl: "https://github.com/KOBBY-IM/Business-Requirements-Process-Mapping-Tool",
     caseStudyUrl: "#",
   },
   {
