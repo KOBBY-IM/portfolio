@@ -1,3 +1,4 @@
+/* ── Project data ── */
 const projects = [
   {
     id: 1,
@@ -69,7 +70,7 @@ const projects = [
     ],
     actions: [
       { label: "Streamlit demo →", href: "https://ab-test-analyser-e7wm6i5funawsvmcnvbcat.streamlit.app/", cls: "project-action--demo", external: true },
-      { label: "Interactive tool →", href: "#", style: "color:#17B8C4;border-color:#17B8C4", external: false }, // EDIT: replace with ab-test-analyser.html when hosted
+      { label: "Interactive tool →", href: "https://kobby-im.github.io/ab-test-analyser/", style: "color:#17B8C4;border-color:#17B8C4", external: true },
       { label: "GitHub →", href: "https://github.com/KOBBY-IM/ab-test-analyser", external: true },
     ],
   },
@@ -87,7 +88,7 @@ const projects = [
       { value: "3 outputs", label: "Map, reqs, RACI" },
       { value: "< 5 min", label: "From problem to plan" },
     ],
-    demoUrl: "#",
+    demoUrl: "https://kobby-im.github.io/Business-Requirements-Process-Mapping-Tool/",
     codeUrl: "https://github.com/KOBBY-IM/Business-Requirements-Process-Mapping-Tool/tree/master/requirements-tool",
     caseStudyUrl: "#",
   },
@@ -129,10 +130,12 @@ const projects = [
   },
 ];
 
+/* ── DOM references ── */
 const projectsGrid = document.getElementById("projects-grid");
 const filterContainer = document.getElementById("project-filters");
 const FILTER_TRANSITION_MS = 250;
 
+/* ── Card markup helpers ── */
 const createBadgeMarkup = (skills) =>
   skills
     .map(
@@ -193,6 +196,7 @@ const createProjectCard = (project) => {
   return article;
 };
 
+/* ── Filter logic ── */
 const applyFilter = (selectedFilter) => {
   const cards = projectsGrid?.querySelectorAll(".project-card");
   if (!cards) return;
@@ -224,6 +228,7 @@ const applyFilter = (selectedFilter) => {
   });
 };
 
+/* ── Init: render cards and wire filter pills ── */
 if (projectsGrid && filterContainer) {
   projects.forEach((project) => {
     projectsGrid.appendChild(createProjectCard(project));

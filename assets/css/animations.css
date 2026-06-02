@@ -1,3 +1,4 @@
+/* ── Hero entrance — staggered fade-up on page load ── */
 .hero__eyebrow,
 .hero__title,
 .hero__subtitle,
@@ -40,6 +41,7 @@
   animation-delay: 550ms;
 }
 
+/* ── Scroll-reveal ── */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -51,10 +53,12 @@
   transform: translateY(0);
 }
 
+/* ── Active nav link ── */
 .site-nav a.is-active {
   color: var(--color-accent);
 }
 
+/* ── Featured card demo button reveal on hover ── */
 .project-card.featured .project-action--demo {
   transform: translateY(10px);
   opacity: 0;
@@ -66,6 +70,7 @@
   opacity: 1;
 }
 
+/* ── Keyframes ── */
 @keyframes fade-up-in {
   from {
     opacity: 0;

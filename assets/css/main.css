@@ -1,5 +1,7 @@
+/* ── Fonts ── */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap");
 
+/* ── Design tokens ── */
 :root {
   /* Typography */
   --font-heading: "DM Serif Display", Georgia, serif;
@@ -49,6 +51,7 @@
   --radius-lg: 16px;
 }
 
+/* ── Reset ── */
 *,
 *::before,
 *::after {
@@ -57,6 +60,7 @@
   padding: 0;
 }
 
+/* ── Base ── */
 html {
   scroll-behavior: smooth;
 }
@@ -67,12 +71,14 @@ body {
   color: var(--color-text);
 }
 
+/* ── Layout ── */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 40px;
 }
 
+/* ── Responsive ── */
 @media (max-width: 1024px) {
   .hero__grid,
   .projects-grid,

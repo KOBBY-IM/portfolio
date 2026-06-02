@@ -1,3 +1,4 @@
+/* ── Header scroll state ── */
 const siteHeader = document.getElementById("site-header");
 const menuToggle = document.getElementById("menu-toggle");
 const primaryNav = document.getElementById("primary-nav");
@@ -16,6 +17,7 @@ const closeMobileNav = () => {
 updateHeaderState();
 window.addEventListener("scroll", updateHeaderState);
 
+/* ── Mobile nav toggle ── */
 if (menuToggle && primaryNav) {
   menuToggle.addEventListener("click", () => {
     const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
@@ -34,6 +36,7 @@ if (menuToggle && primaryNav) {
   });
 }
 
+/* ── Hero stat counter animations ── */
 const statNumbers = document.querySelectorAll(".stat-number");
 const easeOutQuad = (t) => 1 - (1 - t) * (1 - t);
 
@@ -61,6 +64,7 @@ const animateStat = (element) => {
 
 statNumbers.forEach((stat) => animateStat(stat));
 
+/* ── Scroll-reveal (IntersectionObserver) ── */
 const revealTargets = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window && revealTargets.length > 0) {
@@ -80,6 +84,7 @@ if ("IntersectionObserver" in window && revealTargets.length > 0) {
   revealTargets.forEach((item) => item.classList.add("is-visible"));
 }
 
+/* ── Active nav link highlighting ── */
 const navLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
 const sectionIds = ["about", "projects", "skills", "contact"];
 const sections = sectionIds
@@ -107,6 +112,7 @@ if ("IntersectionObserver" in window && sections.length > 0 && navLinks.length >
   sections.forEach((section) => navObserver.observe(section));
 }
 
+/* ── Skill bar animations ── */
 const skillsSection = document.getElementById("skills");
 const skillFills = document.querySelectorAll(".skill-fill");
 
@@ -133,6 +139,7 @@ if ("IntersectionObserver" in window && skillsSection && skillFills.length > 0) 
   animateSkillBars();
 }
 
+/* ── Contact form submission ── */
 const contactForm = document.getElementById("contact-form");
 const formSuccess = document.getElementById("form-success");
 

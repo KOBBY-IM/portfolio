@@ -1,3 +1,4 @@
+/* ── Header ── */
 .site-header {
   position: fixed;
   top: 0;
@@ -82,6 +83,7 @@
   scroll-margin-top: 92px;
 }
 
+/* ── Hero ── */
 .hero {
   min-height: 90vh;
   display: flex;
@@ -143,6 +145,7 @@
   gap: var(--space-md);
 }
 
+/* ── Buttons ── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -198,6 +201,7 @@
   animation: fade-up 700ms ease both;
 }
 
+/* ── Section shared ── */
 .projects-section,
 .about-section,
 .skills-section,
@@ -237,6 +241,7 @@
   color: var(--color-text-muted);
 }
 
+/* ── Projects ── */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -417,6 +422,7 @@
   color: var(--color-text-muted);
 }
 
+/* ── About ── */
 .about-grid {
   display: grid;
   grid-template-columns: 60% 40%;
@@ -470,6 +476,7 @@
   color: var(--color-text-muted);
 }
 
+/* ── Skills ── */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -536,6 +543,7 @@
   transition: width 850ms ease;
 }
 
+/* ── Contact ── */
 .contact-grid {
   display: grid;
   grid-template-columns: 60% 40%;
@@ -668,6 +676,7 @@
   color: var(--color-text-muted);
 }
 
+/* ── Footer ── */
 .site-footer {
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
@@ -709,6 +718,7 @@
   color: var(--color-text-faint);
 }
 
+/* ── Keyframes ── */
 @keyframes fade-up {
   from {
     opacity: 0;
