@@ -106,8 +106,8 @@ const projects = [
       { value: "Any CSV", label: "File input" },
       { value: "Auto", label: "Fix recommendations" },
     ],
-    demoUrl: "#",
-    codeUrl: "#",
+    demoUrl: "https://kobby-im.github.io/data-quality-profiler/",
+    codeUrl: "https://github.com/KOBBY-IM/data-quality-profiler",
     caseStudyUrl: "#",
   },
   {
